@@ -27,5 +27,17 @@ int main() {
 
     printf("\n");
 
+    // Movimentação do Cavalo
+    int ce = 1;
+    do {
+        for (int cb = 0; cb < 2; cb++) {
+            printf("Cavalo para baixo\n");
+        }
+        printf("Cavalo para esquerda\n");
+        ce--;
+    } while (ce == 1);
+
+    printf("\n");
+
     return 0;
 }
