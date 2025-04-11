@@ -92,8 +92,10 @@ int main() {
 
 
     // Menu interativo
-    int opcao; 
+    int opcao, opcao2; 
     int resultado = 4;
+    int resultado2 = 4;
+    double soma1, soma2;
 
     printf("Escolha uma opção de atributo:\n");
     printf("1. Nome do País\n");
@@ -106,12 +108,97 @@ int main() {
     scanf("%d", &opcao);
     printf("\n");
 
-    // Comparações de Atributos
     switch (opcao) {
         case 1:
-        printf("Carta 1: %s  VS  Carta 2: %s\n", nomecidade1, nomecidade2);
+        printf("Escolha uma segunda opção de atributo:\n");
+        printf("2. População\n");
+        printf("3. Área\n");
+        printf("4. PIB\n");
+        printf("5. Número de pontos turísticos\n");
+        printf("6. Densidade Demográfica\n");
+        printf("\n");
+        scanf("%d", &opcao2);
+        printf("\n");
         break;
         case 2:
+        printf("Escolha uma segunda opção de atributo:\n");
+        printf("1. Nome do País\n");
+        printf("3. Área\n");
+        printf("4. PIB\n");
+        printf("5. Número de pontos turísticos\n");
+        printf("6. Densidade Demográfica\n");
+        printf("\n");
+        scanf("%d", &opcao2);
+        printf("\n");
+        break;
+        case 3:
+        printf("Escolha uma segunda opção de atributo:\n");
+        printf("1. Nome do País\n");
+        printf("2. População\n");
+        printf("4. PIB\n");
+        printf("5. Número de pontos turísticos\n");
+        printf("6. Densidade Demográfica\n");
+        printf("\n");
+        scanf("%d", &opcao2);
+        printf("\n");
+        break;
+        case 4:
+        printf("Escolha uma segunda opção de atributo:\n");
+        printf("1. Nome do País\n");
+        printf("2. População\n");
+        printf("3. Área\n");
+        printf("5. Número de pontos turísticos\n");
+        printf("6. Densidade Demográfica\n");
+        printf("\n");
+        scanf("%d", &opcao2);
+        printf("\n");
+        break;
+        case 5:
+        printf("Escolha uma segunda opção de atributo:\n");
+        printf("1. Nome do País\n");
+        printf("2. População\n");
+        printf("3. Área\n");
+        printf("4. PIB\n");
+        printf("6. Densidade Demográfica\n");
+        printf("\n");
+        scanf("%d", &opcao2);
+        printf("\n");
+        break;
+        case 6:
+        printf("Escolha uma segunda opção de atributo:\n");
+        printf("1. Nome dos País\n");
+        printf("2. População\n");
+        printf("3. Área\n");
+        printf("4. PIB\n");
+        printf("5. Número de pontos turísticos\n");
+        printf("\n");
+        scanf("%d", &opcao2);
+        printf("\n");
+        break;
+        default:
+            printf("Opção inválida\n");
+    }
+    
+
+    // Comparações  e somas de Atributos
+    switch (opcao) {
+        case 1:
+        printf("\n");
+        printf("Carta 1                                    Carta 2\n");
+        printf("Estado: %s                                  Estado: %s\n", estado1, estado2);
+        printf("Código: %s                                Código: %s\n", codigo1, codigo2);
+        printf("Nome da Cidade: %s                       Nome da Cidade: %s\n", nomecidade1, nomecidade2);
+        printf("População: %d                              População: %d\n", populacao1, populacao2);
+        printf("Área: %.2f km²                            Área: %.2f km²\n", area1, area2);
+        printf("PIB: %.2f bilhões de reais                PIB: %.2f bilhões de reais\n", pib1, pib2);
+        printf("Número de Pontos Turísticos: %d            Número de Pontos Turísticos: %d\n", pontosturisticos1, pontosturisticos2);
+        printf("Densidade Populacional: %.2f hab/km²       Densidade Populacional: %.2f hab/km²\n", densidadepopulacional1, densidadepopulacional2);
+        printf("PIB per capita: %.2f reais        PIB per capita: %.2f reais\n", pibpercapita1, pibpercapita2);
+        printf("\n");
+        break;
+        case 2:
+            soma1 += populacao1;
+            soma2 += populacao2;
             if (populacao1 > populacao2) {
                 resultado = 1;
             } else if (populacao1 == populacao2) {
@@ -121,6 +208,8 @@ int main() {
             }
         break;
         case 3:
+            soma1 += area1;
+            soma2 += area2;
             if (area1 > area2) {
                 resultado = 1;
             } else if (area1 == area2) {
@@ -130,6 +219,8 @@ int main() {
             }
         break;
         case 4:
+            soma1 += pib1;
+            soma2 += pib2;
             if (pib1 > pib2) {
                 resultado = 1;
             } else if (pib1 == pib2) {
@@ -139,6 +230,8 @@ int main() {
             }
         break;
         case 5:
+            soma1 += pontosturisticos1;
+            soma2 += pontosturisticos2;
             if (pontosturisticos1 > pontosturisticos2) {
                 resultado = 1;
             } else if (pontosturisticos1 == pontosturisticos2) {
@@ -148,6 +241,8 @@ int main() {
             }
         break;
         case 6:
+            soma1 += (1 / densidadepopulacional1);
+            soma2 += (1 / densidadepopulacional2);
             if ((1 / densidadepopulacional1) > (1 / densidadepopulacional2)) {
                 resultado = 1;
             } else if (densidadepopulacional1 == densidadepopulacional2) {
@@ -157,8 +252,87 @@ int main() {
             }
         break;
         default:
-            printf("Opção inválida\n");
+            printf("\n");
     }
+
+    switch (opcao2) {
+        case 1:
+            if (opcao == 1) {
+                printf("\n");
+            } else {
+                printf("\n");
+                printf("Carta 1                                    Carta 2\n");
+                printf("Estado: %s                                  Estado: %s\n", estado1, estado2);
+                printf("Código: %s                                Código: %s\n", codigo1, codigo2);
+                printf("Nome da Cidade: %s                       Nome da Cidade: %s\n", nomecidade1, nomecidade2);
+                printf("População: %d                              População: %d\n", populacao1, populacao2);
+                printf("Área: %.2f km²                            Área: %.2f km²\n", area1, area2);
+                printf("PIB: %.2f bilhões de reais                PIB: %.2f bilhões de reais\n", pib1, pib2);
+                printf("Número de Pontos Turísticos: %d            Número de Pontos Turísticos: %d\n", pontosturisticos1, pontosturisticos2);
+                printf("Densidade Populacional: %.2f hab/km²       Densidade Populacional: %.2f hab/km²\n", densidadepopulacional1, densidadepopulacional2);
+                printf("PIB per capita: %.2f reais        PIB per capita: %.2f reais\n", pibpercapita1, pibpercapita2);
+                printf("\n");
+            }
+        break;
+        case 2:
+            soma1 += populacao1;
+            soma2 += populacao2;
+            if (populacao1 > populacao2) {
+                resultado2 = 1;
+            } else if (populacao1 == populacao2) {
+                resultado2 = 3;
+            } else {
+                resultado2 = 0;
+            }
+        break;
+        case 3:
+            soma1 += area1;
+            soma2 += area2;
+            if (area1 > area2) {
+                resultado2 = 1;
+            } else if (area1 == area2) {
+                resultado2 = 3;
+            } else {
+                resultado2 = 0;
+            }
+        break;
+        case 4:
+            soma1 += pib1;
+            soma2 += pib2;
+            if (pib1 > pib2) {
+                resultado2 = 1;
+            } else if (pib1 == pib2) {
+                resultado2 = 3;
+            } else {
+                resultado2 = 0;
+            }
+        break;
+        case 5:
+            soma1 += pontosturisticos1;
+            soma2 += pontosturisticos2;
+            if (pontosturisticos1 > pontosturisticos2) {
+                resultado2 = 1;
+            } else if (pontosturisticos1 == pontosturisticos2) {
+                resultado2 = 3;
+            } else {
+                resultado2 = 0;
+            }
+        break;
+        case 6:
+            soma1 += (1 / densidadepopulacional1);
+            soma2 += (1 / densidadepopulacional2);
+            if ((1 / densidadepopulacional1) > (1 / densidadepopulacional2)) {
+                resultado2 = 1;
+            } else if (densidadepopulacional1 == densidadepopulacional2) {
+                resultado2 = 3;
+            } else if ((1 / densidadepopulacional2) > (1 / densidadepopulacional1)){
+                resultado2 = 0;
+            }
+        break;
+        default:
+        printf("Opção inválida\n");
+    }
+    
 
     // Exibição dos Resultados
     printf("\n");
@@ -168,7 +342,7 @@ int main() {
     
     switch (opcao) {
         case 1:
-        printf("Você não escolheu um atributo válido para comparação. Reinicie o programa.\n");
+        printf("Sem resultado\n");
         break;
         case 2:
         printf("Atributo escolhido: População\n");
@@ -186,12 +360,12 @@ int main() {
         printf("Atributo escolhido: Densidade Demográfica\n");
         break;
         default:
-        printf("Você não escolheu um opção válida para comparação. Reinicie o programa.\n");
+        printf("Sem resultado\n");
     }
 
     switch (opcao) {
         case 1:
-        printf("Você não escolheu um atributo válido para comparação. Reinicie o programa.\n");
+        printf("Sem resultado\n");
         break;
         case 2:
         printf("Carta 1: %d  Carta 2: %d\n", populacao1, populacao2);
@@ -209,19 +383,76 @@ int main() {
         printf("Carta 1: %.2f hab/km² Carta 2: %.2f hab/km²\n", densidadepopulacional1, densidadepopulacional2);
         break;
         default:
-        printf("Você não escolheu um opção válida para comparação. Reinicie o programa.\n");
+        printf("Sem resultado\n");
     }
 
-    if ((resultado == 1) || (resultado == 0)) {
-        printf("Resultado: Carta %d venceu!\n", 2 - resultado);
-        printf("\n");
-    } else if (resultado == 3) {
-        printf("Resultado: Empate!\n");
+    switch (opcao2) {
+        case 1:
+        printf("Sem resultado\n");
+        break;
+        case 2:
+        printf("Segundo atributo escolhido: População\n");
+        break;
+        case 3:
+        printf("Segundo atributo escolhido: Área\n");
+        break;
+        case 4:
+        printf("Segundo atributo escolhido: PIB\n");
+        break;
+        case 5:
+        printf("Segundo atributo escolhido: Números de pontos turísticos\n");
+        break;
+        case 6:
+        printf("Segundo atributo escolhido: Densidade Demográfica\n");
+        break;
+        default:
+        printf("Sem resultado\n");
+    }
+
+    switch (opcao2) {
+        case 1:
+        printf("Sem resultado\n");
+        break;
+        case 2:
+        printf("Carta 1: %d  Carta 2: %d\n", populacao1, populacao2);
+        break;
+        case 3:
+        printf("Carta 1: %.2f km² Carta 2: %.2f km²\n", area1, area2);
+        break;
+        case 4:
+        printf("Carta 1: %.2f bilhões de reais Carta 2: %.2f bilhões de reais\n", pib1, pib2);
+        break;
+        case 5:
+        printf("Carta 1: %d  Carta 2: %d\n", pontosturisticos1, pontosturisticos2);
+        break;
+        case 6:
+        printf("Carta 1: %.2f hab/km² Carta 2: %.2f hab/km²\n", densidadepopulacional1, densidadepopulacional2);
+        break;
+        default:
+        printf("Sem resultado\n");
+    }
+
+    if (opcao == opcao2 || opcao == 1 || opcao2 == 1 || opcao > 6 || opcao2 > 6 || opcao < 0 || opcao2 < 0)
+    {
+        printf("Impossível determinar um vencedor. Você deve escolher dois atributos válidos diferentes para continuar o jogo (2, 3, 4, 5 ou 6). Reinicie o programa.\n");
         printf("\n");
     } else {
-        printf("Resultado: Sem resultado.");
-        printf("\n");
+        printf("Soma dos atributos da Carta 1: %.2f    Soma dos atributos da Carta 2: %.2f\n", soma1, soma2);
+        if (soma1 > soma2) {
+            printf("Resultado: Carta 1 venceu!\n");
+            printf("\n");
+        } else if (soma1 == soma2) {
+            printf("Resultado: Empate!\n");
+            printf("\n");
+        } else if (soma1 < soma2) {
+            printf("Resultado: Carta 2 venceu!\n");
+            printf("\n");
+        } else {
+            printf("Sem resultado.\n");
+            printf("\n");
+        }
     }
+    
     
     printf("\n");
     
