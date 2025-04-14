@@ -1,41 +1,71 @@
 #include <stdio.h>
 
+// Criação dos loops usando Recursividade
+void looptorre (int t) {
+    if (t > 0) {
+        printf("Torre para direita\n");
+        looptorre(t - 1);
+    }
+
+}
+
+void loopbispo (int b) {
+    if (b > 0) {
+        int ce = 0;
+        do {
+            for (int cb = 0; cb < 1; cb++) {
+                printf("Bispo para direita\n");
+            }
+            printf("Bispo para cima\n");
+            ce++;
+        } while (ce != 1);
+        loopbispo(b - 1);
+    }
+
+}
+
+void looprainha (int r) {
+    if (r > 0) {
+        printf("Rainha para esquerda\n");
+        looprainha(r - 1);
+    }
+
+}
+
+
+
 int main() {
 
     // Movimentação da Torre
-    for (int t = 0; t < 5; t++) {
-        printf("Torre para direita\n");
-    }
+    int jogadastorre = 5;
+    looptorre(jogadastorre);
 
     printf("\n");
 
     // Movimentação do Bispo
-    int b = 0;
-    while (b < 5) {
-        printf("Bispo para diagonal direita para cima\n");
-        b++;
-    }
+    int jogadasbispo = 5;
+    loopbispo(jogadasbispo);
 
     printf("\n");
 
     // Movimentação da Rainha
-    int r = 0;
-    do {
-        printf("Rainha para esquerda\n");
-        r++;
-    } while (r < 8);
+    int jogadasrainha = 8;
+    looprainha(jogadasrainha);
 
     printf("\n");
 
+
     // Movimentação do Cavalo
-    int ce = 1;
+    int movimentocompleto = 0;
+
     do {
-        for (int cb = 0; cb < 2; cb++) {
-            printf("Cavalo para baixo\n");
+        for (int cb = 0; cb < 2 ; cb++) {
+            printf("Cavalo para cima\n");
+            if (cb == 0) continue;
+            printf("Cavalo para direita\n");
         }
-        printf("Cavalo para esquerda\n");
-        ce--;
-    } while (ce == 1);
+        movimentocompleto++;
+    } while (movimentocompleto == 0);
 
     printf("\n");
 
