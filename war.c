@@ -75,15 +75,15 @@ scanf("%d", &T5.tropas);
 
 // Exibição dos territorios
 
-printf("Territorio 1: Nome:  %s Idade: %s Média: %d", T1.nome, T1.cor, T1.tropas);
+printf("\nTerritorio 1: \nNome:  %s \nIdade: %s \nTropas: %d\n", T1.nome, T1.cor, T1.tropas);
 
-printf("Territorio 2: Nome:  %s Idade: %s Média: %d", T2.nome, T2.cor, T2.tropas);
+printf("\nTerritorio 2: \nNome:  %s \nIdade: %s \nTropas: %d\n", T2.nome, T2.cor, T2.tropas);
 
-printf("Territorio 3: Nome:  %s Idade: %s Média: %d", T3.nome, T3.cor, T3.tropas);
+printf("\nTerritorio 3: \nNome:  %s \nIdade: %s \nTropas: %d\n", T3.nome, T3.cor, T3.tropas);
 
-printf("Territorio 4: Nome:  %s Idade: %s Média: %d", T4.nome, T4.cor, T4.tropas);
+printf("\nTerritorio 4: \nNome:  %s \nIdade: %s \nTropas: %d\n", T4.nome, T4.cor, T4.tropas);
 
-printf("Territorio 5: Nome:  %s Idade: %s Média: %d", T5.nome, T5.cor, T5.tropas);
+printf("\nTerritorio 5: \nNome:  %s \nIdade: %s \nTropas: %d\n", T5.nome, T5.cor, T5.tropas);
 
 return 0;
 
